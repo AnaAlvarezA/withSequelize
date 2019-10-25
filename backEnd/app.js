@@ -16,6 +16,8 @@ app.use((req, res, next) => {
 });
 
 //Rutas
+require('./server/routes/users')(app);
+require('./server/routes/photos')(app);
 app.get('*', (req, res) => {
     res.status(200).send({ message: "Bienvenido al servidor NodeJS" });
 });
