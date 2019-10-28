@@ -95,9 +95,9 @@ function create(req, res) {
             function getPhoto(req, res) {
                 const photo = req.params.photo;
                 const thumb = req.params.thumb;
-                if (!thumb)
+                if (thumb == "false")
                     const path_photo = './server/uploads/photos/' + photo;
-                else
+                else if (thumb == "true")
                     const path_photo = './server/uploads/photos/thumbs/' + photo;
                 fs.exists(path_photo.(exists) => {
                     if (exists) {
