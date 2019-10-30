@@ -10,4 +10,5 @@ module.exports = (app) => {
     app.get('/api/get-photo/:photo/:thumb', photosController.getPhoto);
     app.get('/api/photos', photosController.getAll);
     app.get('/api/photos-admin', md_auth.auth, photosController.getAllAdmin);
+    app.get('/api/photo/:id', photosController.getById);
 }

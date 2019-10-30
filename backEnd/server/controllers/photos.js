@@ -137,12 +137,26 @@ function create(req, res) {
                     res.status(500).send({ message: "Ocurrió un error al buscar las fotos" });
                 })
         }
+
+        function getById(req, res) {
+            const id = req.params.id;
+
+            photos.findById(id)
+
+            .then(photo => {
+                    res.status(200).send({ photo });
+                })
+                .catch(err => {
+                    res.status(500).send({ message: "Ocurrió un error al buscar una foto" });
+                })
+        }
         module.exports = {
             create,
             update,
             uploadPhoto,
             getPhoto,
             getAll,
-            getAllAdmin
+            getAllAdmin,
+            getById
         }
     }

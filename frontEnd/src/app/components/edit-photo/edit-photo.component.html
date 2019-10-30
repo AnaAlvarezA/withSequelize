@@ -1,0 +1,38 @@
+<div class="content">
+    <h2>Editar foto</h2>
+    <form #editPhotoForm="ngForm" (ngSubmit)="edit()">
+
+        <mat-form-field class="col-xs-12">
+            <input matInput type="text" #name="ngModel" name="name" [(ngModel)]="photo.photo" required placeholder="Foto" autofocus>
+            <mat-error *ngIf="name.invalid">El nombre de la foto es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-xs-12">
+            <input matInput type="text" #description="ngModel" name="description" [(ngModel)]="photo.description" placeholder="Description" autofocus>
+        </mat-form-field>
+
+        <mat-form-field class="col-xs-12">
+            <input matInput type="text" #author="ngModel" name="author" [(ngModel)]="photo.author" required placeholder="Autor" autofocus>
+            <mat-error *ngIf="author.invalid">El autor de la foto es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-xs-12">
+            <input matInput type="number" #number="ngModel" name="number" [(ngModel)]="photo.number" required placeholder="Number" autofocus>
+            <mat-error *ngIf="number.invalid">El numero de la foto es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-xs-12">
+            <input matInput type="text" disabled>
+            <input #file type="file" style="display: none" (change)="fileChangeEvent($event)">
+            <div>{{image-selected}}</div>
+            <button mat-mini-fab color="primary" matSuffix type="button" (click)="file.click()">
+              <mat-icon>attach_file</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <mat-checkbox class="col-xs-12" color="primary" name="active" [(ngModel)]="photo.active">Activo</mat-checkbox>
+        <button [routerLink]="['/admin/list']" mat-raised-button class="btn" color="default" type="button">Cancelar</button>
+        <button [disabled]="!editPhotoForm.form.valid" mat-raised-button class="btn" color="primary" type="submit">Actualizar</button>
+
+    </form>
+</div>

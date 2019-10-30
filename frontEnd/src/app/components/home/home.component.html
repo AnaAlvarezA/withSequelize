@@ -1,3 +1,59 @@
-<div *ngFor="let photo of photos">
-    {{photo.photo}} - {{photo.description}}
+<div class="content-home">
+    <div class="photo" *ngFor="let photo of photos">
+        <div clas="photo-item" [@move-photos]="direction" *ngIf="photo_selected.photo.number==photo.number" [style.background-image]="'url(' + url + 'get-photo/' + photo-image + '/false)'">
+            <div class="data-photo" *ngIf="!see-more">
+                {{photo.photo}}
+            </div>
+
+            <div class="read-more">
+                <div class="btn-read-more" (click)="see-more=!see-more">
+                    <mat-icon>add</mat-icon>
+                </div>
+                <div class="txt-read-more">Leer más</div>
+                <div class="line-down"></div>
+                <div class="login" [routerLink]="['/login']">Login</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-arrows-nav">
+    <div clcass="move-left" *ngIf="photo_selected.prevOne" [routerLink]="[' /home',photo_selected.prevOne">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+    </div>
+    <div clcass="move-right" *ngIf="photo_selected.nextOne" [routerLink]="[' /home',photo_selected.nextOne">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </div>
+</div>
+
+<div class="see-more" [@see-more] *ngIf="see-more" (click)="see-more=!see-more">
+    <div class="see-more-detail col-lg-6 col-md-6 col-xs-10">
+        <div class="see-more-name detail"> {{photo_selected.photo.photo}}</div>
+        <div class="see-more-description detail"> {{photo_selected.photo.description}}</div>
+        <div class="see-more-author detail"> {{photo_selected.photo.author}}</div>
+        <div class="share detail">
+            <div class="twitter">
+                <img src="../../../assets/images/twitter.png" alt="">
+            </div>
+            <div class="facebook">
+                <img src="../../../assets/images/facebook.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Thumbs -->
+
+<div class='show-thumbs' (click)="show_thumbs=!show_thumbs">
+    <mat-icon *ngIf="!show_thumbs">menu</mat-icon>
+    <mat-icon *ngIf="show_thumbs">close</mat-icon>
+</div>
+
+<div class="content-thumbs" *ngIf="show_thumbs" [@show-thumbs]>
+    <div class="number-photo col-lg-3 col-md-4 col-sm-6">
+        <div>{{photo_selected.photo.number</div>
+    </div>
+    <div class="thumb col-lg-3 col-md-4 col-sm-6" *ngFor="const photo of photos">
+        <app-photo [photo]="photo" [selected]="photo_selected.photo"></app-photo>
+    </div>
 </div>

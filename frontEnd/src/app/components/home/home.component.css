@@ -1,0 +1,254 @@
+.content-home {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.photo-item {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+}
+
+.data-photo {
+    position: absolute;
+    left: 80px;
+    bottom: 120px;
+    right: 0px;
+    color: #fff;
+    z-index: 3;
+    font-size: 40px;
+    font-family: "Roboto-Regular";
+    max-width: 500px;
+}
+
+.read-more {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-read-more {
+    width: 34px;
+    height: 34px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+}
+
+.btn-read-more mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    color: #fff;
+    margin: auto;
+}
+
+.txt-read-more {
+    font-family: 'Roboto-ThinItalic';
+    margin: auto 15px;
+    color: #fff;
+}
+
+.line-down {
+    margin: auto auto auto 0px;
+    height: 1px;
+    position: absolute;
+    left: 120px;
+    top: 18px;
+    right: 100px;
+    background: #fff;
+}
+
+.login {
+    position: absolute;
+    right: 60px;
+    top: 8px;
+    color: #fff;
+    ;
+    transition: all .2s linear;
+    font-family: "Roboto-Regular";
+}
+
+.login:hover {
+    transform: scale(1.2);
+}
+
+.content-arrows-nav {
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+}
+
+.content-arrows-nav mat-icon {
+    font-size: 60px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.content-arrows-nav div {
+    color: rgb(15, 70, 216);
+    transition: all .2s linear;
+    position: absolute;
+    outline: none;
+}
+
+.content-arrows-nav div:hover {
+    color: rgb(113, 170, 210);
+}
+
+.move-left {
+    left: 10px;
+}
+
+.move-right {
+    right: 10px;
+}
+
+.see-more {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(30, 30, 30, 0.8);
+    z-index: 6;
+    overflow: hidden;
+}
+
+.see-more-detail {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-family: "Roboto-Thin";
+    font-size: 10px;
+    color: #fff;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+}
+
+.see-more-name {
+    font-family: "Roboto-Thin";
+    font-size: 6em;
+    color: #fff;
+}
+
+.see-more-description {
+    margin-top: 10px;
+    font-family: "Roboto-Thin";
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.see-more-author {
+    margin-top: 20px;
+    font-family: "Roboto-Thin";
+    font-size: 1.5em;
+    color: #fff;
+}
+
+.share {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+}
+
+.share * {
+    margin: 3px;
+}
+
+.share img {
+    width: 30px;
+    height: 30px;
+}
+
+.share div {
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+.share div:hover {
+    transform: scale(1.2);
+}
+
+
+/* Thumbs */
+
+.show-thumbs {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 6;
+    color: #fff;
+    background: #333;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.show-thumbs mat-icon {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+.content-thumbs {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+
+.number-photo {
+    color: #fff;
+    height: 440px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.number-photo div {
+    font-family: 'Roboto-Bold';
+    font-size: 100px;
+    margin: auto;
+}
+
+.thumb {
+    height: 220px;
+    display: block;
+    padding: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+}

@@ -1,3 +1,25 @@
-<p>
-  list works!
-</p>
+<div class="options">
+    <div class="add-photo" [routerLink]="['/admin/new']">
+        <mat-icon>add</mat-icon>
+
+    </div>
+
+</div>
+<div class="content" [@anim-list]="photos">
+    <div class="grilla col-lg-2 col-md-3 col-sm-4" *ngFor="let photo of photos">
+        <div class="content-photo" [ngClass]="photo.active==false?'content-photo-disabled':''">
+            <div class="photo" [style.background-image]="'url(' + url + 'get-photo/' + photo.image + '/true)'''">
+
+            </div>
+            <div class="data">
+                {{photo.number}} - {{photo.photo}}
+
+                <div>
+                    <div class="photo-hover">
+                        <div [routerLink]="['/admin/edit',photo.id]">
+                            <mat-icon>create</mat-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
