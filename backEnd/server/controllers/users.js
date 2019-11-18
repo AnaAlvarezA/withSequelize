@@ -8,7 +8,7 @@ function createUser(req, res) {
         })
         .catch(err => {
             res.status(500).send({ err });
-        })
+        });
 }
 
 function login(req, res) {
@@ -36,20 +36,21 @@ function login(req, res) {
         })
         .catch(err => {
             res.status(500).send({ message: "Ocurrió un error al buscar el Usuario" });
+        });
+
+}
+
+function getAll() {
+    users.all()
+        .then(users => {
+            res.status(200).send({ users });
         })
-
-
-    function getAll() {
-        users.all()
-            .then(users => {
-                res.status(200).send({ users });
-            })
-            .catch(err => {
-                res.status(500).send({ message: "Ocurrió un error al buscar los usuarios" });
-            })
-    }
-    module.exports = {
-        create,
-        login,
-        getAll
-    }
+        .catch(err => {
+            res.status(500).send({ message: "Ocurrió un error al buscar los usuarios" });
+        });
+}
+module.exports = {
+    createUser,
+    login,
+    getAll
+};

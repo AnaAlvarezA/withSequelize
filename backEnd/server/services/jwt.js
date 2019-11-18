@@ -1,4 +1,4 @@
-const jwt = require('jwt');
+const jwt = require('jsonwebtoken');
 const config = require('../config/config');
 const secret = config.token_secret;
 
@@ -9,7 +9,7 @@ exports.createToken = (user) => {
         id_role: user.id_role
     }
 
-    const jwt = jwt.create(params, secret);
+    const jwt = jsonwebtoken.create(params, secret);
 
     const expiration = new Date();
     expiration.setHours(expiration.getHours() + 2);
